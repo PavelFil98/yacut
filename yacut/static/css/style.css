@@ -84,12 +84,12 @@ a.nav-link:hover {
     text-decoration: underline;
 }
 
-.main-subtitle { 
+.main-subtitle {
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.1;
 }
-.main-subtitle strong{ 
+.main-subtitle strong{
     color: #0AA864;
 }
 
