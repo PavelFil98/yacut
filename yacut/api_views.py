@@ -10,6 +10,7 @@ from .models import URLMap
 from .views import get_unique_short_id
 from settings import PATTERN
 
+
 @app.route('/api/id/', methods=['POST'])
 def create_id():
     data = request.get_json()
