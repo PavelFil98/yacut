@@ -8,7 +8,7 @@ from . import app, db
 from .error_handlers import InvalidAPIUsage
 from .models import URLMap
 from .views import get_unique_short_id
-
+from settings import PATTERN
 
 @app.route('/api/id/', methods=['POST'])
 def create_id():
@@ -23,9 +23,8 @@ def create_id():
                  len(data['custom_id']) > 0)
     if condition:
         custom_id = data['custom_id']
-        pattern = r'^[a-zA-Z0-9]+$'
         condition_first = (len(custom_id) > 16 or not
-                           re.match(pattern, custom_id))
+                           re.match(PATTERN, custom_id))
         condition_second = URLMap.query.filter_by(
             short=custom_id
         ).first() is not None
